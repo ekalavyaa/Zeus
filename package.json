@@ -1,0 +1,15 @@
+{
+  "name": "Zeus",
+  "version": "0.0.1",
+  "description": "A nodejs framework",
+  "main": "index.js",
+  "repository": "https://github.com/ekalavyaa/Zeus.git",
+  "author": "Ekalavyaa",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^1.27.0",
+    "express": "^4.16.2",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.20.3"
+  }
+}
