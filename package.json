@@ -1,5 +1,5 @@
 {
-  "name": "Zeus",
+  "name": "zeus",
   "version": "0.0.1",
   "description": "A nodejs framework",
   "main": "index.js",
@@ -11,5 +11,18 @@
     "express": "^4.16.2",
     "mysql2": "^1.4.2",
     "sequelize": "^4.20.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-google": "^0.9.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-eslint-auto-fix": "^1.1.0",
+    "gulp-if": "^2.0.2",
+    "gulp-print": "^2.0.1",
+    "source-map-support": "^0.5.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.8.1",
+    "webpack-stream": "^4.0.0"
   }
 }

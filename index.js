@@ -1,6 +1,9 @@
+// creating server
+require('./app/server');
 
-var app = require('./app/server');
-var database = require('./database/mysql.js');
+//initializing db
+require('./database/mysql.js');
+
 
 
 

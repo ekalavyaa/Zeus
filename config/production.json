@@ -1,0 +1,18 @@
+{
+    "mysql": {
+        "name":"votifymeMedia",
+        "port":3306,
+        "user":"remote",
+        "password":"Power123",
+        "host":"192.168.1.28",
+        "log":1
+    },
+    "mongo":{
+    
+    },
+    "server": {
+        "port":3000,
+        "host":"localhost"
+    }
+    
+}

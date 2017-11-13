@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express();
+let express = require('express');
+let app = express();
 
 /*  
     get config from config folder
@@ -11,7 +11,6 @@ const serverConfig = config.get('server');
     create express server
 */
 app.listen(serverConfig.port, function () {
-  console.log(`App started at ${serverConfig.port}`);
+	console.log(`App started at ${ serverConfig.port }`);
 });
-
 module.exports = app;
