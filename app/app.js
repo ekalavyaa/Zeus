@@ -1,8 +1,8 @@
-let app = require('./server'),
- helmet = require('helmet'),
- router = require('../routes/router'),
- express = require('express'),
- path = require('path');
+const app = require('./server');
+const helmet = require('helmet');
+const router = require('../routes/router');
+const express = require('express');
+const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet());  
 app.use(helmet.noCache());

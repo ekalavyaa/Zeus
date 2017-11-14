@@ -1,12 +1,13 @@
 "use strict" ;
 const gulp = require( "gulp" );
-let webpack = require( "webpack-stream" ),
- eslint = require( "gulp-eslint" ),
- gulpif = require( "gulp-if" ),
- args = require( "yargs" ).argv,
- gulpprint = require( "gulp-print" ),
- spawn = require( "child_process" ).spawn,
- esConfig = require( "./webpack.config.js" );
+const webpack = require( "webpack-stream" );
+const eslint = require( "gulp-eslint" );
+const gulpif = require( "gulp-if" );
+const args = require( "yargs" ).argv;
+const gulpprint = require( "gulp-print" );
+const spawn = require( "child_process" ).spawn;
+const esConfig = require( "./webpack.config" );
+const nodemon = require('gulp-nodemon');
 
 gulp.task( "build", [ "eslint", "copy-config" ], () => {
     return gulp.src( "index.js" )
@@ -27,8 +28,21 @@ gulp.task( "serve", [ "eslint" ], () => {
 } );
 
 gulp.task( "copy-config", () => {
-    let config = gulp.src( [ "config/**/*" ] ).pipe( gulp.dest( "build/config" ) ),
-     packageJson = gulp.src( [ "package.json" ] ).pipe( gulp.dest( "build" ) );
+    const config = gulp.src( [ "config/**/*" ] ).pipe( gulp.dest( "build/config" ) );
+    const packageJson = gulp.src( [ "package.json" ] ).pipe( gulp.dest( "build" ) );
 
     return Promise.all( [ config, packageJson ] );
 } );
+
+gulp.task('develop', function () {
+    let stream = nodemon({ script: 'index.js', ext: 'html js', ignore: ['ignored.js']});
+   
+    stream
+        .on('restart', function () {
+          console.log('restarted!')
+        })
+        .on('crash', function() {
+          console.error('Application has crashed!\n')
+           stream.emit('restart', 10)  // restart the server in 10 seconds 
+        })
+  });

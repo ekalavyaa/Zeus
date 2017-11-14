@@ -1,10 +1,9 @@
-let express = require('express'),
- router = new express.Router();
+let express = require('express');
+const router = new express.Router();
+const userCon = require('./rest/user/user.controller');
 
 //api goes here
-router.get('/', (req, res) => {
-    res.json({'message':"hello world"});
- });
+router.get('/:userId', userCon.getOne);
 
 //exports all apis
 module.exports = router;

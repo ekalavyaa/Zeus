@@ -1,8 +1,8 @@
-let webpack = require( "webpack" ),
-path = require( "path" ),
-fs = require( "fs" ),
-UglifyJSPlugin = require( "uglifyjs-webpack-plugin" ),
-nodeModules = {};
+const webpack = require( "webpack" );
+const path = require( "path" );
+const fs = require( "fs" );
+const UglifyJSPlugin = require( "uglifyjs-webpack-plugin" );
+const nodeModules = {};
 
 fs.readdirSync( "node_modules" )
 	.filter( ( x ) => {

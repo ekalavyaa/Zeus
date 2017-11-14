@@ -1,6 +1,6 @@
 {
   "mysql": {
-    "name":"votifymeMedia",
+    "name":"nodeFrame",
     "port":3306,
     "user":"remote",
     "password":"Power123",

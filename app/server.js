@@ -1,11 +1,11 @@
-let express = require( "express" ),
- app = express();
+const express = require( "express" );
+const app = express();
 
 /*
     get config from config folder
 */
-const config = require( "config" ),
- serverConfig = config.get( "server" );
+const config = require( "config" );
+const serverConfig = config.get( "server" );
 
 /*
     create express server

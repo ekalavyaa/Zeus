@@ -1,16 +1,14 @@
-"use strict";
-let Sequelize = require( "sequelize" ),
- config = require( "config" ),
- dbConfig = config.get( "mysql" ),
- db = {};
-
+const Sequelize = require( "sequelize" );
+const config = require( "config" );
+const dbConfig = config.get( "mysql" );
 const sequelize = new Sequelize( dbConfig.name, dbConfig.user, dbConfig.password, {
     "dialect": "mysql",
-    "port": parseInt( dbConfig.port ),
+    "port": parseInt( dbConfig.port, 10),
     "host": dbConfig.host,
     "operatorsAliases": Sequelize.Op,
     "logging": dbConfig.log
 } );
+let db = {};
 
 sequelize.authenticate().then( () => {
     console.log( `Mysql connected to ${dbConfig.name}` );
