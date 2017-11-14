@@ -1,10 +1,9 @@
+"use strict" ;
 // creating server
-require('./app/server');
+require( './app/server' );
 
-//initializing db
-require('./database/mysql.js');
+//initializing app
+require('./app/app');
 
-
-
-
-
+// initializing db
+require( './database/mysql.js' );
