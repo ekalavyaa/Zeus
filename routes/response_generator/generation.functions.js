@@ -1,4 +1,5 @@
 let config = require('./generator.config');
+
 exports.success = (msg, data) => {
     config.successMessage.message = msg;
     config.successMessage.data = data;
