@@ -12,6 +12,10 @@
   "rules":{
     "no-console":"off",
     "max-len":"off",
-    "prefer-destructuring":"off"
+    "prefer-destructuring":"off",
+    "no-var": 2,
+    "consistent-return":"off",
+    "no-plusplus":"off",
+    "no-mixed-operators":"off"
   }
   }

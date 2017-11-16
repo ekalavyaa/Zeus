@@ -4,26 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-       
-        {
-            "version": "0.1.0",
-            "command": "gulp",
-            "isShellCommand": true,
-            "args": [
-                "--no-color"
-            ],
-            "tasks": [
-                {
-                    "taskName": "scripts",
-                    "isBuildCommand": true,
-                    "showOutput": "always"
-                },
-                {
-                    "taskName": "sass",
-                    "isBuildCommand": true,
-                    "showOutput": "always"
-                }
-            ]
-        }
+        
+       {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "${workspaceFolder}/index.js"
+    }
     ] 
 }
