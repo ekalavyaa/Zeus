@@ -13,6 +13,10 @@
   "server": {
     "port":3000,
     "host":"localhost"
+  },
+  "session":{
+    "secret":"kickbuttowski",
+    "scheme":"bearer"
   }
 
 }

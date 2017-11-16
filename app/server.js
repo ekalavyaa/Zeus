@@ -13,4 +13,5 @@ const serverConfig = config.get( "server" );
 app.listen( serverConfig.port, () => {
     console.log( `App started at ${ serverConfig.port }` );
 } );
+
 module.exports = app;

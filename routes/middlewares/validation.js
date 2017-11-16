@@ -1,20 +1,22 @@
 let jsonResponse = require('../response_generator/generation.functions');
 
 let getValidationInstance = (req, ruleNamePrefix, field, message) => {
+	let check;
 	switch(ruleNamePrefix) {
 		case 'q':
-			return req.checkQuery(field, field + message);
+			check = req.checkQuery(field, field + message);
 			break;
 		case 'p':
-			return req.checkParams(field, field + message);
+			check =req.checkParams(field, field + message);
 			break;
 		case 'b':
-			return req.checkBody(field, field + message);
+			check =req.checkBody(field, field + message);
 			break;
 		default:
 			console.log('Unknown validation type : ' + ruleNamePrefix);
 			throw new Error('rule not supported');
 	}
+	return check;
 };
 
 let returnResponse = (err, res, next ) => {

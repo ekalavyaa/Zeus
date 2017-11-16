@@ -16,6 +16,7 @@
     "no-var": 2,
     "consistent-return":"off",
     "no-plusplus":"off",
-    "no-mixed-operators":"off"
+    "no-mixed-operators":"off",
+    "no-tabs":"off"
   }
   }

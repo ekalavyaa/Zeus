@@ -1,9 +1,8 @@
 /*
- Supported Rules formats
-
-	b:is_length:1:120
-	b:is_range:86400000:1209600000
-	b:is_multiple:86400000
+Supported Rules formats
+b:is_length:1:120
+b:is_range:86400000:1209600000
+b:is_multiple:86400000
 
 
 */

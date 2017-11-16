@@ -6,6 +6,7 @@ const path = require('path');
 const validator = require('express-validator');
 const  customValidators  = require('../routes/validation/custom.validation');
 
+//Add app features 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet());  
 app.use(helmet.noCache());
@@ -18,4 +19,5 @@ process.on("unhandledRejection", (reason, p) => {
     throw reason; // optional, in case you want to treat these as errors
 });
 
+//exports app 
 module.exports = app;
