@@ -5,7 +5,11 @@ const validationRules = require('./validation/validaion.rules');
 const validate = require('./middlewares/validation').validate;
 
 //api goes here
-router.get('/user/:userId', validate(validationRules.getUser), userCon.getOne);
+
+//user related
+router
+ .get('/user/:userId', validate(validationRules.getAll), userCon.getAll)
+ .post('/login', userCon.login);
 
 //exports all apis
 module.exports = router;

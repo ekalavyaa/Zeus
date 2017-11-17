@@ -5,13 +5,17 @@ const express = require('express');
 const path = require('path');
 const validator = require('express-validator');
 const  customValidators  = require('../routes/validation/custom.validation');
+const bodyParser = require('body-parser')
 
 //Add app features 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet());  
 app.use(helmet.noCache());
 app.use(validator(customValidators));
 app.use('/', router);
+
 
 //unhandled rejection
 process.on("unhandledRejection", (reason, p) => {

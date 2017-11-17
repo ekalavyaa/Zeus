@@ -21,3 +21,17 @@ exports.getUsersWithCount = async () => {
     let count = await countUsers();
     return { users: users, count: count };
 };
+
+exports.login = async (body) => {
+    let query = 'select * from users where email = :email';
+    let user = await repository.rawQuery(query, {
+        replacements: {
+            email:body.email
+        },
+        type:mysqlDb.sequelize.QueryTypes.SELECT
+    });
+    if(!user[0] || !user.length || !user[0].password === body.password) {
+        throw new Error('Invalid credentials'); 
+    }
+    return user[0];
+};
